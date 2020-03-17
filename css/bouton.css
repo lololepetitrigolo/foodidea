@@ -1,5 +1,5 @@
 .portfolio-experiment, .scene {
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
   display: flex;
   flex-wrap: wrap;
@@ -133,7 +133,7 @@
     display: inline-block;
     border: 3px solid transparent;
     position: relative;
-    font-size: 1.5em;
+    font-size: 6vw ;
     cursor: pointer;
     letter-spacing: 0.07em;
   }
