@@ -123,7 +123,7 @@
   transform-origin: left;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1081px) {
   .portfolio-experiment {
     background-image: none;
   }

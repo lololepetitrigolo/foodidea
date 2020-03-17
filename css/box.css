@@ -23,7 +23,7 @@ ul{
   cursor: pointer;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1081px) {
   .a{
     background: white;
     margin: 0;
