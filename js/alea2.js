@@ -56,7 +56,7 @@ var menu = [
   ["Riz",0,"Veau marengo",0,"midi",""],
   ["Gaspacho",0,"",0,"soir","Ingredients : gaspacho, tomates, concombres, poivrons"],
   ["Tomates provençale",0,"Filet de merlu",0,"midi",""],
-  ["Tomates farcie",0,"",0,"midi","Conseil : vous pouvez aussi farcire des courgettes et des poivrons"]
+  ["Tomates farcie",0,"",0,"midi","Conseil : vous pouvez aussi farcire des courgettes et des poivrons"],
   ["Fajitas",0,"",0,"midi","Ingrédient : galette de blé, viande hachées, sauce tomates, épice"],
   ["Purée",0,"Petites saucisses",0,"midi",""],
   ["Aubergine cuisinées",0,"Cordon bleu",0,"midi",""],
@@ -65,8 +65,8 @@ var menu = [
   ["Barbecue",0,"",0,"midi",""],
   ["Pommes de terre grenaille",78,"Côtes de porc",75,"midi",""],
   ["Pates",90,"Steak",0,"midi",""],
-  ["Tomates",0,"Rotis de porc",42,"midi",""],
-  ["Semoule",90,"Côtes de porc",75,"midi",""],
+  ["Tomates",0,"Rotis de porc",42,"soir",""],
+  ["Semoule",90,"Côtes de porc",75,"midi",""]
 ];
 
 
@@ -104,7 +104,7 @@ function Id() {
 }
 
 function direct(m,s) {
-  for (var i = 0; i < menu.length; i++) {
+  for (var i = 0; i < menu.length + 1; i++) {
     if (menu[i][4] === "midi") {
       var e = document.createElement("li");
       e.id = "nouveau";
