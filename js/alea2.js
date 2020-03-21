@@ -92,8 +92,31 @@ function aff() {
   else{
     document.getElementById('via').innerHTML = "Aucune";
   }
-  document.getElementById('nutrileg').innerHTML = menu[n][1];
-  document.getElementById('nutrivia').innerHTML = menu[n][3];
+  document.getElementById('nutrileg').innerHTML = menu[n][1]+"/100";
+  document.getElementById('nutrivia').innerHTML = menu[n][3]+"/100";
+  //nutriscore
+  if (menu[n][1] === 0) {
+    document.getElementById('nutrileg').innerHTML = "";
+  }
+  if (menu[n][3] === 0) {
+    document.getElementById('nutrivia').innerHTML = "";
+  }
+
+  //prep
+  if(menu[n][5] == ""){
+    document.getElementById('prep').innerHTML ="";
+  }
+
+  //viande
+  if(menu[n][2] == ""){
+    document.getElementById('via').innerHTML ="";
+  }
+
+  //légume
+  if(menu[n][0] == ""){
+    document.getElementById('leg').innerHTML ="";
+  }
+  
 }
 
 function Id() {
