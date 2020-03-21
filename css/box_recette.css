@@ -45,7 +45,7 @@
 
   }
   #bouton, #slider{
-    width: 50vw;
+    width: 75vw;
   }
 
   @media (max-width: 1081px) {

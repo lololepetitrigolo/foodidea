@@ -121,7 +121,6 @@ var slider = document.getElementById("myRange");
         var e = document.createElement("a");
         var q = document.createElement("a");
         var ing = document.createElement("a");
-        console.log(valeur)
         q.id = "quantité";
         q.textContent = menu[n][i]*valeur;
         ing.id = "ingredient";
