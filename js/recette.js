@@ -11,7 +11,8 @@ var printemps = [
 - décomposer le tableau de réferenece
 - modifier la page de base pour afficher les bonnes valeurs
 */
-var menu = [["crêpes",250,"g de farine, ",3,"oeufs, ",2,"cuillères à soupe de sucre, ",2,"cuillères à soupe d'huile, ",50,"cl d'eau/de lait","melanger la farine plus la moitié du liquide. Ajouter ensuite les oeuf le sucre et l'huile. Pour finir ajouter le reste du liquide.","sucree"]];
+var menu = [["Crêpes",250,"g de farine, ",3,"oeufs, ",2,"cuillères à soupe de sucre, ",2,"cuillères à soupe d'huile, ",50,"cl d'eau/de lait","melanger la farine plus la moitié du liquide. Ajouter ensuite les oeuf le sucre et l'huile. Pour finir ajouter le reste du liquide.","sucree"],
+["Cookies",75,"g de farine, ",1,"oeufs, ",42.5,"g de sucre, ",42.5,"g de beure, ",50,"g de pépites de chocolat",0.5,"cuillère à café de levure chimique","melanger la farine plus la moitié du liquide. Ajouter ensuite les oeuf le sucre et l'huile. Pour finir ajouter le reste du liquide.","sucree"]];
 var slider = document.getElementById("myRange");
   
   function Hide (addr) {
@@ -20,24 +21,11 @@ var slider = document.getElementById("myRange");
   
   function Show (addr) {
     document.getElementById(addr).style.visibility = "visible";
-    aff();
+    aleatoire();
   }
   
   function Hidenav () {
     document.getElementById("check").checked = false;
-  }
-  
-  function aff() {
-    var n = Math.round(Math.random()*(menu.length-1));
-    document.getElementById('leg').innerHTML = menu[n][0];
-    if (menu[n][2] != "") {
-      document.getElementById('via').innerHTML = menu[n][2];
-    }
-    else{
-      document.getElementById('via').innerHTML = "Aucune";
-    }
-    document.getElementById('nutrileg').innerHTML = menu[n][1];
-    document.getElementById('nutrivia').innerHTML = menu[n][3];
   }
   
   function Id() {
@@ -141,4 +129,42 @@ var slider = document.getElementById("myRange");
         ingredient.appendChild(e);
     }
   }
+  function aleatoire(){
+    var n = Math.round(Math.random()*(menu.length-1));
+
+    document.getElementById('nom_recette').innerHTML = menu[n][0];
+    var ingr = document.getElementById('ingr');
+    var prep = document.getElementById('preparation');
+    var bot = document.getElementById('bot');
+    bot.removeChild(ingr);
+
+    var nouveau = document.createElement("p");
+    nouveau.id = "ingr";
+    nouveau.textContent = "Ingrédients: ";
+    bot.insertBefore(nouveau,prep);
+
+    var ingr = document.getElementById('ingr');
+    var prep = document.getElementById('preparation');
+
+    for (var i = 1; i < menu[n].length-2; i+=2) {
+        var e = document.createElement("a");
+        var q = document.createElement("a");
+        var ing = document.createElement("a");
+        q.id = "quantité";
+        q.textContent = menu[n][i];
+        ing.id = "ingredient";
+        ing.textContent = menu[n][i+1];
+        e.appendChild(q);
+        e.appendChild(ing);
+        ingr.appendChild(e);
+    }
+    
+    document.getElementById('prep').innerHTML = menu[n][menu[n].length-2];
   
+    //prep
+    if(menu[n][menu[n].length-2] === ""){
+      document.getElementById('preparation').innerHTML ="";
+    }
+    
+    document.getElementById('foo').style.visibility = "visible";
+  }
