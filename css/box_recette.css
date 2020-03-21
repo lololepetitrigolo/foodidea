@@ -44,8 +44,8 @@
       left: 25vw;
 
   }
-  #bouton, #slider{
-    width: 75vw;
+  #myRange{
+    width: 75%;
   }
 
   @media (max-width: 1081px) {
