@@ -126,7 +126,7 @@ function direct(m,s) {
 
 function Affmenu(n) {
   document.getElementById('leg').innerHTML = menu[n][0];
-  document.getElementById('prep').innerHTML ="Ingrédient : "+ menu[n][5];
+  document.getElementById('prep').innerHTML = menu[n][5];
   document.getElementById('via').innerHTML = menu[n][2];
   document.getElementById('nutrileg').innerHTML = menu[n][1]+"/100";
   document.getElementById('nutrivia').innerHTML = menu[n][3]+"/100";

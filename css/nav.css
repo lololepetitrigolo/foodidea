@@ -273,6 +273,12 @@ svg{
     color:black;
     flex-direction: column;
   }
+  @media (min-width: 450px){
+    body{
+      font-size: 25px;
+    }
+  }
+
   .top{
     text-align: center;
   }

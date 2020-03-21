@@ -2,10 +2,10 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" media="screen" type="text/css" href="css/box.css"/>
+    <link rel="stylesheet" media="screen" type="text/css" href="css/box_recette.css"/>
     <link rel="stylesheet" media="screen" type="text/css" href="css/alea.css"/>
     <link rel="stylesheet" media="screen" type="text/css" href="css/nav.css"/>
-    <script type="text/javascript" src="js/alea2.js"></script>
+    <script type="text/javascript" src="js/recette.js"></script>
     <script type="text/javascript">
     </script>
     <title>FoodIdea</title>
@@ -25,16 +25,16 @@
       <li><a class="lien" href="index.html">Home</a></li>
       <li><a class="lien" href="tous.html">Menu</a></li>
       <li><a class="lien" href="recette.html">Recette</a></li>
-      <li><a class="lien" href="#" onclick="Show('foo');Hidenav();">Aléatoire</a></li>
+      <li><a class="lien" href="#" onclick="Show('foo');Hidenav();">Reccette aléatoire</a></li>
   </div>
 </aside>
   <article>
         <div class="a">
           <div id="divA">
-            <h1 id="t1">Midi</h1>
+            <h1 id="t1">Sucrée</h1>
           </div>
           <div id="divB">
-            <h1 id="t1">Soir</h1>
+            <h1 id="t1">Salée</h1>
           </div>
     </article>
     <div id="foo" style="visibility: hidden;">
@@ -47,17 +47,15 @@
           </svg>
       </label>
       </div>
-      <div class="bot">
-        <h1>Menu</h1>
-        <p>
-          <a id="leg"></a>
-          <a id="nutrileg"></a>
+      <div id="bot">
+        <h1 id="nom_recette"></h1>
+        <form class="slidecontainer">
+            <input type="range" min="1" max="10" value="10" class="slider" id="myRange" onclick="controle()">
+        </form>
+        <p id="ingr">
+            Ingredient:
         </p>
-        <p>
-          <a id="via"></a>
-          <a id="nutrivia"></a>
-        </p>
-        <p><a id="prep"></a></p>
+        <p id="preparation">Préparation: <a id="prep"></a></p>
       </div>
     </div>
   </body>
