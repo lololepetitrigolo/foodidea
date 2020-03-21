@@ -71,6 +71,18 @@ var slider = document.getElementById("myRange");
   function Affrecette(n) {
     document.getElementById('nom_recette').innerHTML = menu[n][0];
     var ingr = document.getElementById('ingr');
+    var prep = document.getElementById('preparation');
+    var bot = document.getElementById('bot');
+    bot.removeChild(ingr);
+
+    var nouveau = document.createElement("p");
+    nouveau.id = "ingr";
+    nouveau.textContent = "Ingrédients: ";
+    bot.insertBefore(nouveau,prep);
+
+    var ingr = document.getElementById('ingr');
+    var prep = document.getElementById('preparation');
+
     for (var i = 1; i < menu[n].length-2; i+=2) {
         var e = document.createElement("a");
         var q = document.createElement("a");
@@ -83,11 +95,12 @@ var slider = document.getElementById("myRange");
         e.appendChild(ing);
         ingr.appendChild(e);
     }
+    
     document.getElementById('prep').innerHTML = menu[n][menu[n].length-2];
   
     //prep
-    if(menu[n][5] == ""){
-      document.getElementById('prep').innerHTML ="";
+    if(menu[n][menu[n].length-2] === ""){
+      document.getElementById('preparation').innerHTML ="";
     }
     
     document.getElementById('foo').style.visibility = "visible";
@@ -111,8 +124,6 @@ var slider = document.getElementById("myRange");
     nouveau.id = "ingr";
     nouveau.textContent = "Ingrédients: ";
     bot.insertBefore(nouveau,prep);
-    
-    console.log(bot)
 
     for (var i = 1; i < menu[n].length-2; i+=2) {
         var ingredient = document.getElementById('ingr');
