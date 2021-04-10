@@ -1,0 +1,14 @@
+{% extends "menu/layout.html" %}
+{% load static %}
+
+{% block body %}
+<link href="{% static 'css/bouton.css' %}" rel="stylesheet">
+<a>
+  <span class="text" onclick="Show('foo');">Menu aléatoire</span>
+  <span class="line -right"></span>
+  <span class="line -top"></span>
+  <span class="line -left"></span>
+  <span class="line -bottom"></span>
+</a>
+<script type="text/javascript" src="{% static 'js/alea.js' %}"></script>
+{% endblock body %}

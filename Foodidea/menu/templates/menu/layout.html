@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link href="{% static 'css/alea.css' %}" rel="stylesheet">
+    <link href="{% static 'css/nav.css' %}" rel="stylesheet">
+    <title>FoodIdea</title>
+</head>
+
+<body>
+    <div class="nav"></div>
+    <input type="checkbox" id="check" />
+    <label for="check">
+        <svg viewBox="0 0 30 30" width="30" height="30">
+            <path id="one" d="M4 10h22M4" stroke-width="2" stroke-linecap="round"></path>
+            <path id="two" d="M4 20h22M4" stroke-width="2" stroke-linecap="round"></path>
+        </svg>FoodIdea
+    </label>
+    <aside class="aside">
+        <div class="top">
+            <h2>Navigation</h2>
+            <li><a class="lien" href={% url 'index' %}>Home</a></li>
+            <li><a class="lien" href={% url 'tous' %}>Menu</a></li>
+            <li><a class="lien" href={% url 'recette' %}>Recette</a></li>
+            <li><a class="lien" href="#" onclick="Show('foo');Hidenav();">Menu aléatoire !!</a></li>
+        </div>
+        <div class="bottom">
+        </div>
+    </aside>
+    <article>
+        <div class="wrapper">
+            <div class="content">
+                <section class="portfolio-experiment">
+                    {% block body %}
+                    {% endblock %}
+                </section>
+            </div>
+    </article>
+    <div id="foo" style="visibility: hidden;">
+        <div class="top">
+            <input onclick="Hide('foo');" type="checkbox" id="check2" />
+            <label for="check2">
+                <svg viewBox="0 0 30 30">
+                    <path id="one" d="M 10,10 l 10,10" stroke="black" stroke-width="2" stroke-linecap="round"></path>
+                    <path id="two" d="M 10,20 l 10,-10" stroke="black" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+            </label>
+        </div>
+        <div class="bot">
+            <h1>Menu</h1>
+            <p><a id="leg"></a></p>
+            <p><a id="nutrileg"></a></p>
+            <p><a id="via"></a></p>
+            <p><a id="nutrivia"></a></p>
+            <p><a id="prep"></a></p>
+        </div>
+    </div>
+</body>
+
+</html>

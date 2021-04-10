@@ -179,3 +179,5 @@ function Affmenu(n) {
   
   document.getElementById('foo').style.visibility = "visible";
 }
+
+Id()
